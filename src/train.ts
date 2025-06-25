@@ -1,5 +1,18 @@
 console.log("Train.ts Ishga tushdi");
 
+// H-TASK:
+
+// shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul qilib, faqat positive qiymatlarni olib string holatda return qilsin
+// MASALAN: getPositive([1, -4, 2]) return qiladi "12"
+
+function getPositive(numbers: number[]) {
+  const positiveNumbers: number[] = numbers.filter((char) => char > 0);
+  const result: string = positiveNumbers.join("");
+  return result;
+}
+
+console.log(getPositive([1, -4, 2]));
+
 // TASK G:
 
 // Yagona parametrga ega function tuzing.
@@ -10,10 +23,10 @@ console.log("Train.ts Ishga tushdi");
 // Yuqoridagi misolda, birinchi indeksda 21 joylashgan.
 // Va bu 21 soni arrayning tarkibidagi birinchi eng katta son hisobladi va bizga uning indeksi 1 qaytadi.
 
-function findHighest(arr: number[]) {
-  const max = Math.max(...arr);
-  return max;
-}
+// function findHighest(arr: number[]) {
+//   const max = Math.max(...arr);
+//   return max;
+// }
 
-const result = findHighest([5, 21, 12, 21, 8, 44]);
-console.log("Result:", result);
+// const result = findHighest([5, 21, 12, 21, 8, 44]);
+// console.log("Result:", result);
