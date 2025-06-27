@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import router from "./router";
 
 // 1-Entrance
 const app = express();
@@ -11,4 +12,6 @@ app.use(express.json());
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 // 4-Routers
+app.use("/", router); //MidlleWare Design pattern
+
 export default app;
