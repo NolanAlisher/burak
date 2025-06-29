@@ -8,6 +8,12 @@
     - ERROR handling
  */
 
+/**
+    TRADITIONAL API
+    REST API
+    GRAPGHQL API
+ */
+
 // console.log("Train.ts Ishga tushdi");
 
 // // H2-TASK:
