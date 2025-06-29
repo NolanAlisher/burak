@@ -1,25 +1,35 @@
-console.log("Train.ts Ishga tushdi");
+/** PROJECT STANDARTS:
+    - LOGGING standarts
+    - NAMING standarts:
+      camel case: function, varable, method
+      pascal case: class
+      kebab case: folder, file
+      snake case: css
+    - ERROR handling
+ */
 
-// H2-TASK:
+// console.log("Train.ts Ishga tushdi");
 
-// Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
-// MASALAN: getDigits("m14i1t") return qiladi "141"
+// // H2-TASK:
 
-function getDigits(input: string): string {
-  let result = "";
+// // Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
+// // MASALAN: getDigits("m14i1t") return qiladi "141"
 
-  for (let i = 0; i < input.length; i++) {
-    const char = input[i];
-    if (char >= "0" && char <= "9") {
-      result += char;
-    }
-  }
+// function getDigits(input: string): string {
+//   let result = "";
 
-  return result;
-}
+//   for (let i = 0; i < input.length; i++) {
+//     const char = input[i];
+//     if (char >= "0" && char <= "9") {
+//       result += char;
+//     }
+//   }
 
-const result = getDigits("m14i1t");
-console.log("result:", result);
+//   return result;
+// }
+
+// const result = getDigits("m14i1t");
+// console.log("result:", result);
 
 // H-TASK:
 
