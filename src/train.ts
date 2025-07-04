@@ -1,3 +1,28 @@
+// TASK J:
+
+// Shunday function tuzing, u string qabul qilsin.
+// Va string ichidagi eng uzun so'zni qaytarsin.
+
+// MASALAN: findLongestWord("I came from Uzbekistan!"); return "Uzbekistan!"
+
+// Yuqoridagi text tarkibida 'Uzbekistan'
+// eng uzun so'z bo'lganligi uchun 'Uzbekistan'ni qaytarmoqda
+
+function findLongestWord(text: string): string {
+  const words = text.split(" ");
+  let longestWord = "";
+
+  for (const word of words) {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  }
+
+  return longestWord;
+}
+
+console.log(findLongestWord("Hello world, hello Uzbekistan, and Turkmenistan"));
+
 // TASK I:
 
 // Shunday function tuzing, u parametrdagi array ichida eng ko'p
@@ -7,24 +32,24 @@
 
 // Yuqoridag misolda argument sifatida kiritilayotgan array tarkibida 4 soni ko'p takrorlanganligi uchun 4'ni return qilmoqda.
 
-function majorityElement(arr: number[]): number {
-  let counts: any = {};
-  let max = 0;
-  let kopSon = arr[0];
+// function majorityElement(arr: number[]): number {
+//   let counts: any = {};
+//   let max = 0;
+//   let kopSon = arr[0];
 
-  for (let num of arr) {
-    counts[num] = (counts[num] || 0) + 1;
+//   for (let num of arr) {
+//     counts[num] = (counts[num] || 0) + 1;
 
-    if (counts[num] > max) {
-      max = counts[num];
-      kopSon = num;
-    }
-  }
+//     if (counts[num] > max) {
+//       max = counts[num];
+//       kopSon = num;
+//     }
+//   }
 
-  return kopSon;
-}
+//   return kopSon;
+// }
 
-console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
+// console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
 
 /** PROJECT STANDARTS:
     - LOGGING standarts
