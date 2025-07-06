@@ -1,3 +1,30 @@
+// TASK K:
+
+// Berilayotgan parametr tarkibida nechta unli harf bor
+// ekanligini aniqlovchi function tuzing
+
+// MASALAN: countVowels("string"); return 1
+
+// Yuqoridagi misolda 'string' so'zi tarkibida yagona unli harf 'i'
+// bo'lganligi uchun '1'ni qaytarmoqda
+
+function countVowels(text: string): number {
+  const vowels = ["a", "e", "i", "o", "u"];
+  let count = 0;
+
+  // Har bir harfni tekshiramiz
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i].toLowerCase();
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+console.log(countVowels("string"));
+
 // TASK J:
 
 // Shunday function tuzing, u string qabul qilsin.
@@ -8,20 +35,20 @@
 // Yuqoridagi text tarkibida 'Uzbekistan'
 // eng uzun so'z bo'lganligi uchun 'Uzbekistan'ni qaytarmoqda
 
-function findLongestWord(text: string): string {
-  const words = text.split(" ");
-  let longestWord = "";
+// function findLongestWord(text: string): string {
+//   const words = text.split(" ");
+//   let longestWord = "";
 
-  for (const word of words) {
-    if (word.length > longestWord.length) {
-      longestWord = word;
-    }
-  }
+//   for (const word of words) {
+//     if (word.length > longestWord.length) {
+//       longestWord = word;
+//     }
+//   }
 
-  return longestWord;
-}
+//   return longestWord;
+// }
 
-console.log(findLongestWord("Hello world, hello Uzbekistan, and Turkmenistan"));
+// console.log(findLongestWord("Hello world, hello Uzbekistan, and Turkmenistan"));
 
 // TASK I:
 
