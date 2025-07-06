@@ -26,17 +26,13 @@ app.use(
   session({
     secret: String(process.env.SESSION_SECRET),
     cookie: {
-      maxAge: 1000 * 3600 * 3, // 3h
+      maxAge: 1000 * 3600 * 6, // 3h
     },
     store: store,
     resave: true,
     saveUninitialized: true,
   })
 );
-
-app.get("/", function (req, res) {
-  res.send("Hello " + JSON.stringify(req.session));
-});
 
 // 3-Views
 app.set("views", path.join(__dirname, "views"));
