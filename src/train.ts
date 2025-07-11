@@ -1,3 +1,21 @@
+// TASK L:
+
+// So'zlarni ketma - ketligini buzmasdan har bir so'zni
+// alohida teskarisiga o'girib beradigan fucntion tuzing.
+// Funtion yagona string qabul qilsin
+
+// MASALAN: reverseSentence("we like coding!") return "ew ekil !gnidoc";
+// Qaytayotgan natijaga e'tibor bersangiz, so'zlar joyi o'zgarmasdan turgan o'rnida teskarisiga o'girilmoqda
+
+function reverseSentence(sentence: string): string {
+  return sentence
+    .split(" ")
+    .map((word) => word.split("").reverse().join(""))
+    .join(" ");
+}
+
+console.log(reverseSentence("we like coding!"));
+
 // TASK K:
 
 // Berilayotgan parametr tarkibida nechta unli harf bor
@@ -8,22 +26,22 @@
 // Yuqoridagi misolda 'string' so'zi tarkibida yagona unli harf 'i'
 // bo'lganligi uchun '1'ni qaytarmoqda
 
-function countVowels(text: string): number {
-  const vowels = ["a", "e", "i", "o", "u"];
-  let count = 0;
+// function countVowels(text: string): number {
+//   const vowels = ["a", "e", "i", "o", "u"];
+//   let count = 0;
 
-  // Har bir harfni tekshiramiz
-  for (let i = 0; i < text.length; i++) {
-    const char = text[i].toLowerCase();
-    if (vowels.includes(char)) {
-      count++;
-    }
-  }
+//   // Har bir harfni tekshiramiz
+//   for (let i = 0; i < text.length; i++) {
+//     const char = text[i].toLowerCase();
+//     if (vowels.includes(char)) {
+//       count++;
+//     }
+//   }
 
-  return count;
-}
+//   return count;
+// }
 
-console.log(countVowels("string"));
+// console.log(countVowels("string"));
 
 // TASK J:
 
