@@ -1,3 +1,25 @@
+// TASK M:
+
+// Shunday function tuzing, u raqamlardan tashkil topgan array qabul qilsin
+// va array ichidagi har bir raqam uchun raqamning o'zi va hamda o'sha raqamni kvadratidan
+// tashkil topgan object hosil qilib, hosil bo'lgan objectlarni array ichida qaytarsin
+
+// MASALAN: MASALAN: getSquareNumbers([1, 2, 3]) return [{ number: 1, square: 1 }, { number: 2, square: 4 }, { number: 3, square: 9 }];
+
+type NumberWithSquare = {
+  number: number;
+  square: number;
+};
+
+function getSquareNumbers(numbers: number[]): NumberWithSquare[] {
+  return numbers.map((num) => ({
+    number: num,
+    square: num * num,
+  }));
+}
+const result = getSquareNumbers([1, 2, 3]);
+console.log("result:", result);
+
 // TASK L:
 
 // So'zlarni ketma - ketligini buzmasdan har bir so'zni
@@ -7,14 +29,14 @@
 // MASALAN: reverseSentence("we like coding!") return "ew ekil !gnidoc";
 // Qaytayotgan natijaga e'tibor bersangiz, so'zlar joyi o'zgarmasdan turgan o'rnida teskarisiga o'girilmoqda
 
-function reverseSentence(sentence: string): string {
-  return sentence
-    .split(" ")
-    .map((word) => word.split("").reverse().join(""))
-    .join(" ");
-}
+// function reverseSentence(sentence: string): string {
+//   return sentence
+//     .split(" ")
+//     .map((word) => word.split("").reverse().join(""))
+//     .join(" ");
+// }
 
-console.log(reverseSentence("we like coding!"));
+// console.log(reverseSentence("we like coding!"));
 
 // TASK K:
 
