@@ -1,3 +1,26 @@
+// TASK O:
+
+// Shunday function yozing va u har xil qiymatlardan iborat array qabul qilsin.
+// Va array ichidagi sonlar yig'indisini hisoblab chiqgan javobni qaytarsin
+
+// MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]); return 45
+
+// Yuqoridagi misolda array tarkibida faqatgina ikkita yagona son mavjud bular 10 hamda 35
+// Qolganlari nested bo'lib yoki type'lari number emas.
+function calculateSumOfNumbers(arr: any[]): number {
+  let sum = 0;
+
+  for (const item of arr) {
+    if (typeof item === "number") {
+      sum += item;
+    }
+  }
+
+  return sum;
+}
+
+console.log(calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]));
+
 // TASK N:
 
 // Parametr sifatida yagona string qabul qiladigan function tuzing.
@@ -11,13 +34,13 @@
 // *Palindrom so'z deb o'ngdan chapga ham ~ chapdan o'ngga ham o'qilganda
 // bir xil ma'noni beradigan so'zga aytiladi
 
-function palindromCheck(word: string): boolean {
-  const reversed = word.split("").reverse().join("");
-  return word === reversed;
-}
+// function palindromCheck(word: string): boolean {
+//   const reversed = word.split("").reverse().join("");
+//   return word === reversed;
+// }
 
-console.log(palindromCheck("hannah"));
-console.log(palindromCheck("nolan"));
+// console.log(palindromCheck("hannah"));
+// console.log(palindromCheck("nolan"));
 // TASK M:
 
 // Shunday function tuzing, u raqamlardan tashkil topgan array qabul qilsin
