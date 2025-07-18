@@ -4,14 +4,19 @@
 
 <body>
   <div class="signup-container">
-    <form action="/admin/signup" method="POST" enctype="multipart/form-data">
+    <form
+      onsubmit="return validateSignupForm()"
+      action="/admin/signup"
+      method="POST"
+      enctype="multipart/form-data"
+    >
       <div class="signup-frame" style="width: 650px">
         <div class="signup-top">
           <span>Signup</span>
           <div>Go back <a href="/admin" style="color: #6440fb">Home</a></div>
           <p>
             Already signed up?
-            <a href="/admin/login" style="color: #6440fb">Login</a>
+            <a href="/admin/login" style="color: #6440fb">Login</a>1
           </p>
         </div>
 
