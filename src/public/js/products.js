@@ -29,9 +29,10 @@ $(".new-product-status").on("change", async function (e) {
 
   try {
     const response = await axios.post(`/admin/product/${id}`, {
+      //header
       productStatus: productStatus,
     });
-    console.log("response:", response);
+    console.log("response======:", response);
     const result = response.data;
     if (result.data) {
       $(".new-product-status").blur();
