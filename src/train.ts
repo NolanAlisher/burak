@@ -1,3 +1,28 @@
+// TASK R
+
+// Shunday function yozing, u string parametrga ega bo'lsin.
+// Agar argument sifatida berilayotgan string, "1 + 2" bo'lsa,
+// string ichidagi sonlarin yig'indisni hisoblab, number holatida qaytarsin
+
+// MASALAN: calculate("1 + 3"); return 4;
+// 1 + 3 = 4, shu sababli 4 natijani qaytarmoqda.
+
+function calculate(expression: string): number {
+  const parts = expression.split(" ");
+  const num1 = Number(parts[0]);
+  const operator = parts[1];
+  const num2 = Number(parts[2]);
+
+  if (operator === "+") {
+    return num1 + num2;
+  } else {
+    throw new Error("Use only + sign");
+  }
+}
+
+console.log(calculate("1 + 3"));
+console.log(calculate("101 + 100"));
+
 // TASK Q:
 
 // Shunday function yozing, u 2 ta parametrga ega bo'lib
@@ -12,12 +37,12 @@
 // Ushbu misolda, ikkinchi argument sifatida berilayotgan 'year' objectning
 // propertysida mavjud bo'lmaganligi uchun 'false' natijani qaytarmoqda.
 
-function hasProperty(obj: object, key: string): boolean {
-  return key in obj;
-}
+// function hasProperty(obj: object, key: string): boolean {
+//   return key in obj;
+// }
 
-console.log(hasProperty({ name: "BMW", model: "M3" }, "model"));
-console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "model"));
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));
 
 // TASK P:
 
