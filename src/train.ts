@@ -1,3 +1,40 @@
+/** TASK T
+
+Shunday function tuzing, u sonlardan tashkil topgan 2'ta array qabul qilsin.
+Va ikkala arraydagi sonlarni tartiblab bir arrayda qaytarsin.
+
+MASALAN: mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]); return [0, 3, 4, 4, 6, 30, 31];
+
+Yuqoridagi misolda, ikkala arrayni birlashtirib, tartib raqam bo'yicha tartiblab qaytarmoqda. */
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+  const add = [...arr1, ...arr2];
+  return add.sort((a, b) => a - b);
+}
+
+console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+
+//  TASK S
+
+// Shunday function tuzing, u numberlardan tashkil topgan array qabul qilsin
+// va o'sha numberlar orasidagi tushib qolgan sonni topib uni return qilsin.
+
+// MASALAN: missingNumber([3, 0, 1]); return 2
+
+// Yuqoridagi misolda, berilayotgan sonlar tarkibini tartiblasak
+// '2' soni tushib qolgan
+
+// function missingNumber(nums: number[]): number {
+//   const n = nums.length;
+//   const expectedSum = (n * (n + 1)) / 2;
+
+//   const actualSum = nums.reduce((sum, num) => sum + num, 0);
+
+//   return expectedSum - actualSum;
+// }
+
+// console.log(missingNumber([3, 0, 1]));
+// console.log(missingNumber([3, 0, 6, 8, 1]));
+
 // TASK R
 
 // Shunday function yozing, u string parametrga ega bo'lsin.
@@ -7,21 +44,21 @@
 // MASALAN: calculate("1 + 3"); return 4;
 // 1 + 3 = 4, shu sababli 4 natijani qaytarmoqda.
 
-function calculate(expression: string): number {
-  const parts = expression.split(" ");
-  const num1 = Number(parts[0]);
-  const operator = parts[1];
-  const num2 = Number(parts[2]);
+// function calculate(expression: string): number {
+//   const parts = expression.split(" ");
+//   const num1 = Number(parts[0]);
+//   const operator = parts[1];
+//   const num2 = Number(parts[2]);
 
-  if (operator === "+") {
-    return num1 + num2;
-  } else {
-    throw new Error("Use only + sign");
-  }
-}
+//   if (operator === "+") {
+//     return num1 + num2;
+//   } else {
+//     throw new Error("Use only + sign");
+//   }
+// }
 
-console.log(calculate("1 + 3"));
-console.log(calculate("101 + 100"));
+// console.log(calculate("1 + 3"));
+// console.log(calculate("101 + 100"));
 
 // TASK Q:
 
