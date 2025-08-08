@@ -10,23 +10,23 @@
 // qatnashgan harflar necha marotaba takrorlangini bilan
 // object sifatida qaytarilmoqda.
 
-function countChars(str: string): Record<string, number> {
-  const result: Record<string, number> = {};
+// function countChars(str: string): Record<string, number> {
+//   const result: Record<string, number> = {};
 
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
+//   for (let i = 0; i < str.length; i++) {
+//     const char = str[i];
 
-    if (result[char]) {
-      result[char]++;
-    } else {
-      result[char] = 1;
-    }
-  }
+//     if (result[char]) {
+//       result[char]++;
+//     } else {
+//       result[char] = 1;
+//     }
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-console.log(countChars("sunny"));
+// console.log(countChars("sunny"));
 
 /** 
 TASK U
