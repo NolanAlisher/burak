@@ -1,3 +1,42 @@
+// TASK X
+
+// Shunday function yozing, uni object va string parametrlari bo'lsin.
+// Bu function, birinchi object parametri tarkibida, kalit sifatida ikkinchi string parametri
+// necha marotaba takrorlanganlini sanab qaytarsin.
+
+// Eslatma => Nested object'lar ham sanalsin
+
+// MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
+
+// Yuqoridagi misolda, birinchi argument object, ikkinchi argument 'model'.
+// Funktsiya, shu ikkinchi argument 'model', birinchi argument object
+// tarkibida kalit sifatida 2 marotaba takrorlanganligi uchun 2 soni return qilmoqda
+
+function countOccurrences(obj: Record<string, any>, key: string): number {
+  let count = 0;
+
+  function helper(currentObj: Record<string, any>): void {
+    for (let k in currentObj) {
+      if (k === key) {
+        count++;
+      }
+      if (typeof currentObj[k] === "object" && currentObj[k] !== null) {
+        helper(currentObj[k]);
+      }
+    }
+  }
+
+  helper(obj);
+  return count;
+}
+
+console.log(
+  countOccurrences(
+    { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
+    "model"
+  )
+);
+
 // TASK W
 
 // Shunday function yozing, u o'ziga parametr sifatida
@@ -10,21 +49,21 @@
 // Yuqoridagi namunada berilayotgan array ikkinchi parametr 3'ga
 // asoslanib 3 bo'lakga bo'linib qaytmoqda. Qolgani esa o'z holati qolyapti
 
-function chunkArray<T>(arr: T[], size: number): T[][] {
-  if (size <= 0) {
-    throw new Error("Chunk size must be greater than 0");
-  }
+// function chunkArray<T>(arr: T[], size: number): T[][] {
+//   if (size <= 0) {
+//     throw new Error("Chunk size must be greater than 0");
+//   }
 
-  const result: T[][] = [];
+//   const result: T[][] = [];
 
-  for (let i = 0; i < arr.length; i += size) {
-    result.push(arr.slice(i, i + size));
-  }
+//   for (let i = 0; i < arr.length; i += size) {
+//     result.push(arr.slice(i, i + size));
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+// console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
 
 // TASK V
 
