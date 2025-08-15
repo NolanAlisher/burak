@@ -24,7 +24,7 @@ class MemberService {
       .findOne({ memberType: MemberType.RESTAURANT })
       .lean()
       .exec();
-    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
     return result;
   }
 
@@ -54,8 +54,8 @@ class MemberService {
         { memberNick: 1, memberPassword: 1, memberStatus: 1 }
       )
       .exec();
-    if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
-    else if (member.memberStatus === MemberStatus.BLOCK) {
+
+    if (member.memberStatus === MemberStatus.BLOCK) {
       throw new Errors(HttpCode.FORBIDDEN, Message.BLOCKED_USER);
     }
 
@@ -63,10 +63,6 @@ class MemberService {
       input.memberPassword,
       member.memberPassword
     );
-
-    if (!isMatch) {
-      throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
-    }
 
     return await this.memberModel.findById(member._id).lean().exec();
   }
@@ -76,7 +72,6 @@ class MemberService {
     const result = await this.memberModel
       .findOne({ _id: memberId, memberStatus: MemberStatus.ACTIVE })
       .exec();
-    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
     return result;
   }
@@ -89,7 +84,6 @@ class MemberService {
     const result = await this.memberModel
       .findOneAndUpdate({ _id: memberId }, input, { new: true })
       .exec();
-    if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 
     return result;
   }
@@ -103,7 +97,7 @@ class MemberService {
       .sort({ memberPoints: -1 })
       .limit(4)
       .exec();
-    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
     return result;
   }
 
@@ -136,16 +130,11 @@ class MemberService {
         { memberNick: 1, memberPassword: 1 }
       )
       .exec();
-    if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
 
     const isMatch = await bcrypt.compare(
       input.memberPassword,
       member.memberPassword
     );
-
-    if (!isMatch) {
-      throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
-    }
 
     return await this.memberModel.findById(member._id).exec();
   }
@@ -153,7 +142,7 @@ class MemberService {
     const result = await this.memberModel
       .find({ memberType: MemberType.USER })
       .exec();
-    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
     return result;
   }
   public async updateChosenUser(input: MemberUpdateInput): Promise<Member> {
@@ -161,7 +150,7 @@ class MemberService {
     const result = await this.memberModel
       .findByIdAndUpdate({ _id: input._id }, input, { new: true })
       .exec();
-    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
     return result;
   }
 }
