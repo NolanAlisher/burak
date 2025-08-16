@@ -9,7 +9,7 @@ import {
 } from "../libs/types/product";
 import ProductModel from "../schema/Product.model";
 import { ProductStatus } from "../libs/enums/product.enum";
-import { compare } from "bcryptjs";
+import { ObjectId } from "mongoose";
 
 class ProductService {
   private readonly productModel;
@@ -42,6 +42,17 @@ class ProductService {
       .exec();
     console.log("after result: ", result);
 
+    return result;
+  }
+
+  public async getProduct(
+    memberId: ObjectId | null,
+    id: string
+  ): Promise<Product> {
+    const productId = shapeIntoMongooseObjectId(id);
+    let result = await this.productModel
+      .findOne({ _id: productId, productStatus: ProductStatus.PROCESS })
+      .exec();
     return result;
   }
 
