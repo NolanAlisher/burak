@@ -1,3 +1,24 @@
+// TASK Y
+
+// Shunday function yozing, uni 2'ta array parametri bo'lsin.
+// Bu function ikkala arrayda ham ishtirok etgan bir xil
+// qiymatlarni yagona arrayga joylab qaytarsin.
+
+// MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
+
+// Yuqoridagi misolda, argument sifatida berilayotgan array'larda
+// o'xshash sonlar mavjud. Function'ning vazifasi esa ana shu
+// ikkala array'da ishtirok etgan o'xshash sonlarni yagona arrayga
+// joylab return qilmoqda.
+
+function findIntersection(arr1: number[], arr2: number[]): number[] {
+  return arr1.filter(
+    (value, index) => arr2.includes(value) && arr1.indexOf(value) === index
+  );
+}
+
+console.log(findIntersection([1, 2, 3], [3, 2, 0]));
+
 // TASK X
 
 // Shunday function yozing, uni object va string parametrlari bo'lsin.
@@ -12,30 +33,30 @@
 // Funktsiya, shu ikkinchi argument 'model', birinchi argument object
 // tarkibida kalit sifatida 2 marotaba takrorlanganligi uchun 2 soni return qilmoqda
 
-function countOccurrences(obj: Record<string, any>, key: string): number {
-  let count = 0;
+// function countOccurrences(obj: Record<string, any>, key: string): number {
+//   let count = 0;
 
-  function helper(currentObj: Record<string, any>): void {
-    for (let k in currentObj) {
-      if (k === key) {
-        count++;
-      }
-      if (typeof currentObj[k] === "object" && currentObj[k] !== null) {
-        helper(currentObj[k]);
-      }
-    }
-  }
+//   function helper(currentObj: Record<string, any>): void {
+//     for (let k in currentObj) {
+//       if (k === key) {
+//         count++;
+//       }
+//       if (typeof currentObj[k] === "object" && currentObj[k] !== null) {
+//         helper(currentObj[k]);
+//       }
+//     }
+//   }
 
-  helper(obj);
-  return count;
-}
+//   helper(obj);
+//   return count;
+// }
 
-console.log(
-  countOccurrences(
-    { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
-    "model"
-  )
-);
+// console.log(
+//   countOccurrences(
+//     { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
+//     "model"
+//   )
+// );
 
 // TASK W
 
