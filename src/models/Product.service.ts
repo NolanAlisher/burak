@@ -10,12 +10,17 @@ import {
 import ProductModel from "../schema/Product.model";
 import { ProductStatus } from "../libs/enums/product.enum";
 import { ObjectId } from "mongoose";
+import ViewService from "./View.service";
+import { ViewInput } from "../libs/types/view";
+import { ViewGroup } from "../libs/enums/view.enum";
 
 class ProductService {
   private readonly productModel;
+  public viewService;
 
   constructor() {
     this.productModel = ProductModel;
+    this.viewService = new ViewService();
   }
   /** SPA */
   public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
@@ -51,8 +56,34 @@ class ProductService {
   ): Promise<Product> {
     const productId = shapeIntoMongooseObjectId(id);
     let result = await this.productModel
-      .findOne({ _id: productId, productStatus: ProductStatus.PROCESS })
+      .findOne({
+        _id: productId,
+        productStatus: ProductStatus.PROCESS,
+      })
       .exec();
+
+    if (memberId) {
+      // Check Existence
+      const input: ViewInput = {
+        memberId: memberId,
+        viewRefId: productId,
+        viewGroup: ViewGroup.PRODUCT,
+      };
+      const existView = await this.viewService.checkViewExistence(input);
+      console.log("Exist:", !!existView);
+      if (!existView) {
+        // Insert view
+        await this.viewService.insertMemberView(input);
+        // Increase counts
+        result = await this.productModel
+          .findByIdAndUpdate(
+            productId,
+            { $inc: { productViews: +1 } },
+            { new: true }
+          )
+          .exec();
+      }
+    }
     return result;
   }
 
