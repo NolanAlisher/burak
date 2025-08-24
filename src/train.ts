@@ -1,3 +1,22 @@
+// TASK ZC
+
+// Selisy (°C) shkalasi bo'yicha raqam qabul qilib, uni
+// Ferenhayt (°F) shkalisaga o'zgaritib beradigan function yozing.
+
+// MASALAN: celsiusToFahrenheit(0) return 32;
+// MASALAN: celsiusToFahrenheit(10) return 50;
+
+// Yuqoridagi misolda, 0°C, 32°F'ga teng.
+// Yoki 10 gradus Selsiy, 50 Farenhaytga teng.
+
+// °C va °F => Tempraturani o'lchashda ishlatiladigan o'lchov birligi.
+
+function celsiusToFahrenheit(celsius: number): number {
+  return (celsius * 9) / 5 + 32;
+}
+
+console.log(celsiusToFahrenheit(10));
+
 // TASK ZA
 
 // Shunday function yozing, u array ichidagi objectlarni
@@ -7,18 +26,18 @@
 
 // Yuqoridagi misolda, kichik raqamlar katta raqamlar tomon
 // tartiblangan holatda return bo'lmoqda.
-export interface T {
-  [key: string]: any;
-}
+// export interface T {
+//   [key: string]: any;
+// }
 
-function sortByAge(arr: T[]): T[] {
-  return arr.sort((a, b) => a.age - b.age);
-}
+// function sortByAge(arr: T[]): T[] {
+//   return arr.sort((a, b) => a.age - b.age);
+// }
 
-const people: T[] = [{ age: 23 }, { age: 21 }, { age: 13 }];
-const sorted = sortByAge(people);
+// const people: T[] = [{ age: 23 }, { age: 21 }, { age: 13 }];
+// const sorted = sortByAge(people);
 
-console.log(sorted);
+// console.log(sorted);
 
 // TASK Z
 
