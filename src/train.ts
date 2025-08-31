@@ -1,3 +1,29 @@
+// TASK ZE
+
+// Shunday function yozing, uniygona string parametri mavjud bo'lsin.
+// Bu function string tarkibidagi takrorlangan xarflarni olib tashlab qolgan
+// qiymatni qaytarsin.
+
+// MASALAN: removeDuplicate('stringg') return 'string'
+
+// Yuqoridagi misolda, 'stringg' so'zi tarkibida 'g' harfi takrorlanmoqda
+// funktsiyamiz shu bittadan ortiq takrorlangan harfni olib natijani
+// qaytarmoqda.
+
+function removeDuplicate(str: string): string {
+  let result = "";
+
+  for (let char of str) {
+    if (!result.includes(char)) {
+      result += char;
+    }
+  }
+
+  return result;
+}
+
+console.log(removeDuplicate("ccooddee"));
+
 // TASK ZD
 
 // Shunday function yozing. Bu function o'ziga, parametr sifatida
@@ -12,19 +38,19 @@
 // Bizning function uchinchi berilgan '2' raqamini shu '3' bilan almashtirib,
 // yangilangan arrayni qaytarmoqda.
 
-function changeNumberInArray(
-  index: number,
-  arr: number[],
-  newValue: number
-): number[] {
-  let updatedArray = [...arr];
+// function changeNumberInArray(
+//   index: number,
+//   arr: number[],
+//   newValue: number
+// ): number[] {
+//   let updatedArray = [...arr];
 
-  updatedArray[index] = newValue;
+//   updatedArray[index] = newValue;
 
-  return updatedArray;
-}
+//   return updatedArray;
+// }
 
-console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));
+// console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));
 
 // TASK ZC
 
