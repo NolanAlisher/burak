@@ -36,8 +36,8 @@ memberController.signup = async (req: Request, res: Response) => {
     console.log("signup");
 
     const input: MemberInput = req.body,
-      result: Member = await memberService.signup(input),
-      token = await authService.createToken(result);
+      result: Member = await memberService.signup(input);
+    const token = await authService.createToken(result);
 
     res.cookie("accessToken", token, {
       maxAge: AUTH_TIMER * 3600 * 1000,
@@ -45,8 +45,6 @@ memberController.signup = async (req: Request, res: Response) => {
     });
 
     res.status(HttpCode.CREATED).json({ member: result, accessToken: token });
-
-    res.json({ member: result });
   } catch (err) {
     console.log("Error, signup", err);
     if (err instanceof Errors) res.status(err.code).json(err);

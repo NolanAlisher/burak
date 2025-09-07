@@ -1,3 +1,28 @@
+// TASK ZF
+
+// Shunday function yozing, uni string parametri bo'lsin.
+// Ushbu function, har bir so'zni bosh harflarini katta harf qilib qaytarsin.
+// Lekin uzunligi 1 yoki 2 harfga teng bo'lgan so'zlarni esa o'z holicha
+// qoldirsin.
+
+// MASALAN: capitalizeWords('name should be a string'); return 'Name Should be a String';
+
+// Yuqoridagi misolda, bizning function, uzunligi 2 harfdan katta bo'lgan so'zlarnigina,
+// birinchi harfini katta harf bilan qaytarmoqda.
+function capitalizeWords(sentence: string): string {
+  return sentence
+    .split(" ")
+    .map((word) => {
+      if (word.length <= 2) {
+        return word;
+      }
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+}
+
+console.log(capitalizeWords("name should be a string"));
+
 // TASK ZE
 
 // Shunday function yozing, uniygona string parametri mavjud bo'lsin.
@@ -10,19 +35,19 @@
 // funktsiyamiz shu bittadan ortiq takrorlangan harfni olib natijani
 // qaytarmoqda.
 
-function removeDuplicate(str: string): string {
-  let result = "";
+// function removeDuplicate(str: string): string {
+//   let result = "";
 
-  for (let char of str) {
-    if (!result.includes(char)) {
-      result += char;
-    }
-  }
+//   for (let char of str) {
+//     if (!result.includes(char)) {
+//       result += char;
+//     }
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-console.log(removeDuplicate("ccooddee"));
+// console.log(removeDuplicate("ccooddee"));
 
 // TASK ZD
 
