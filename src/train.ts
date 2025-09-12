@@ -1,3 +1,33 @@
+// TASK ZH
+
+// Shunday function yozing, u berilgan array parametri ichidagi
+// raqamlar orasidan, tartib bo'yicha eng kichik raqamdan, eng katta raqamgacha
+// tushirib qoldirilgan sonlarni o'zinigina topib bir array sifatida qaytarsin.
+
+// MASALAN: findDisappearedNumbers([1, 3, 4, 7]); return [2, 5, 6];
+
+// Yuqoridagi misolda, eng katta raqam bu 7 va eng kichik raqam bu 1.
+// Function'ning vazifasi berilgan sonlar ichidan tushirib qoldirilgan
+// sonlarnigina topib qaytarmoqda.
+
+function findDisappearedNumbers(nums: number[]): number[] {
+  if (nums.length === 0) return [];
+
+  const min = Math.min(...nums);
+  const max = Math.max(...nums);
+  const numSet = new Set(nums);
+  const result: number[] = [];
+
+  for (let i = min; i <= max; i++) {
+    if (!numSet.has(i)) {
+      result.push(i);
+    }
+  }
+
+  return result;
+}
+
+console.log(findDisappearedNumbers([1, 3, 4, 7]));
 // TASK ZG
 
 // String sifatida berilgan string parametrni
@@ -6,11 +36,11 @@
 // MASALAN: convertToSnakeCase('name should be a string')
 // return 'name_should_be_a_string'
 
-function convertToSnakeCase(input: string): string {
-  return input.trim().toLowerCase().replace(/\s+/g, "_");
-}
+// function convertToSnakeCase(input: string): string {
+//   return input.trim().toLowerCase().replace(/\s+/g, "_");
+// }
 
-console.log(convertToSnakeCase("name should be a string"));
+// console.log(convertToSnakeCase("name should be a string"));
 
 // TASK ZF
 
