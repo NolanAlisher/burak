@@ -1,3 +1,21 @@
+// TASK ZI
+
+// Shundan function yozing, bu function 3 soniydan so'ng
+// "Hello World!" so'zini qaytarsin.
+
+// MASALAN: delayHelloWorld("Hello World"); return "Hello World";
+function delayHelloWorld(message: string): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(message);
+    }, 3000);
+  });
+}
+
+delayHelloWorld("Hello World!").then((result: string) => {
+  console.log(result);
+});
+
 // TASK ZH
 
 // Shunday function yozing, u berilgan array parametri ichidagi
@@ -10,24 +28,24 @@
 // Function'ning vazifasi berilgan sonlar ichidan tushirib qoldirilgan
 // sonlarnigina topib qaytarmoqda.
 
-function findDisappearedNumbers(nums: number[]): number[] {
-  if (nums.length === 0) return [];
+// function findDisappearedNumbers(nums: number[]): number[] {
+//   if (nums.length === 0) return [];
 
-  const min = Math.min(...nums);
-  const max = Math.max(...nums);
-  const numSet = new Set(nums);
-  const result: number[] = [];
+//   const min = Math.min(...nums);
+//   const max = Math.max(...nums);
+//   const numSet = new Set(nums);
+//   const result: number[] = [];
 
-  for (let i = min; i <= max; i++) {
-    if (!numSet.has(i)) {
-      result.push(i);
-    }
-  }
+//   for (let i = min; i <= max; i++) {
+//     if (!numSet.has(i)) {
+//       result.push(i);
+//     }
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-console.log(findDisappearedNumbers([1, 3, 4, 7]));
+// console.log(findDisappearedNumbers([1, 3, 4, 7]));
 // TASK ZG
 
 // String sifatida berilgan string parametrni
